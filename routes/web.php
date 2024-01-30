@@ -1,5 +1,6 @@
 <?php
 
+use App\Livewire\Dashboard;
 use Illuminate\Support\Facades\Route;
 use Livewire\Volt\Volt;
 
@@ -15,3 +16,9 @@ use Livewire\Volt\Volt;
 */
 
 Volt::route('/login', 'auth.login')->name('auth.login');
+
+Route::middleware('auth')->group(function () {
+    Route::prefix('dashboard')->name('dashboard.')->group(function () {
+        Route::get('/', Dashboard::class)->name('index');
+    });
+});
