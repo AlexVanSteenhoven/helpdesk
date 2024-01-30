@@ -5,7 +5,7 @@
             type="text"
             class="bg-neutral-200 dark:bg-neutral-900 text-neutral-900 dark:text-neutral-200 border border-gray-300 dark:border-neutral-700 h-10 px-10 rounded-lg focus:outline-none hover:cursor-pointer"
             placeholder="search"
-            wire:model.live.debounce.300ms="search"
+            wire:model.live.debounce.300ms="$parent.search"
         >
     </div>
 

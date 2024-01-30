@@ -47,6 +47,16 @@ class UsersTable extends Component
     }
 
     /**
+     * Returns a skeleton placeholder for when the data is not fully loaded
+     *
+     * @return View
+     */
+    public function placeholder(): View
+    {
+        return view('placeholders.datatable');
+    }
+
+    /**
      * Sorts the table based on the column and order
      *
      * @param string $column

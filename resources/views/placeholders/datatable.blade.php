@@ -1,5 +1,6 @@
 <div
     class="container border border-gray-300 dark:border-neutral-700 w-full justify-center mx-auto gap-4 py-8 pt-6 px-9 dark:bg-neutral-800 bg-neutral-50 mt-4 rounded-xl">
+
     <livewire:datatables.components.header />
 
     <table class="w-full my-0 align-middle text-dark">
@@ -71,45 +72,29 @@
         </tr>
         </thead>
         <tbody>
-        @foreach($users as $user)
-            <tr class="border-b last:border-b-0 border-gray-300 dark:border-gray-700">
-                <td class="p-3 !pl-0 text-start">
-                    <span
-                        class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        {{ $user->name }}
-                    </span>
-                </td>
-                <td class="p-3 !pl-0 text-start">
-                    <span
-                        class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        {{ $user->email }}
-                    </span>
-                </td>
-                <td class="p-3 !pl-0 text-start">
-                    <span class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        Role
-                    </span>
-                </td>
-                <td class="p-3 !pl-0 text-start">
-                    <span
-                        class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        {{ \Carbon\Carbon::parse($user->created_at)->format('d-m-Y H:i:s') }}
-                    </span>
-                </td>
-                <td class="p-3 !pl-0 text-start">
-                    <span class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        {{ \Carbon\Carbon::parse($user->updated_at)->format('d-m-Y H:i:s') }}
-                    </span>
-                </td>
-                <td class="pr-0 text-start">
-                    <span class="font-semibold text-neutral-950 dark:text-neutral-200 text-md/normal">
-                        <a href="#" class="text-neutral-600 hover:text-neutral-900 dark:text-neutral-300 dark:hover:text-neutral-100">
-                            Edit
-                        </a>
-                    </span>
-                </td>
-            </tr>
-        @endforeach
+            @for($i = 0; $i < 10; $i++)
+                <tr class="border-b last:border-b-0 border-gray-300 dark:border-gray-700 animate-pulse" role="status">
+                    <td class="p-3 !pl-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <td class="p-3 !pl-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <td class="p-3 !pl-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <td class="p-3 !pl-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <td class="p-3 !pl-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <td class="pr-0 text-start">
+                        <div class="h-2 bg-gray-200 rounded-lg dark:bg-gray-600 min-h-[25px]"></div>
+                    </td>
+                    <span class="sr-only">Loading...</span>
+                </tr>
+            @endfor
         </tbody>
     </table>
 
@@ -126,10 +111,6 @@
                 <option value="50">50</option>
                 <option value="100">100</option>
             </select>
-        </div>
-
-        <div class="w-auto flex-grow">
-            {{ $users->links() }}
         </div>
     </div>
 
